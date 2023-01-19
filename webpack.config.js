@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 var copyWebpackPlugin = require('copy-webpack-plugin');
 const bundleOutputDir = './dist';
+const openBrowser = require('react-dev-utils/openBrowser');
 
 module.exports = (env) => {
   const isDevBuild = !(env && env.prod);
@@ -13,10 +14,24 @@ module.exports = (env) => {
       path: path.resolve(bundleOutputDir),
     },
     devServer: {
+      host: 'localhost',
+      port: 8080,
+      hot: true,
+      onListening: function (devServer) {
+        if (!devServer) {
+          throw new Error('webpack-dev-server is not defined');
+        }
+        const addr = devServer.server.address();
+        openBrowser(`http://${addr.address}:${addr.port}`);
+      },
       static: {
         directory: path.resolve(bundleOutputDir),
       },
       allowedHosts: 'all',
+      client: {
+        // Shows a full-screen overlay in the browser when there are compiler errors or warnings.
+        overlay: true,
+      },
       //contentBase: bundleOutputDir
     },
     plugins: isDevBuild
@@ -72,7 +87,8 @@ module.exports = (env) => {
                     },
                     // makes usage of @babel/polyfill because of IE11
                     // there is at least async functions and for..of
-                    useBuiltIns: 'usage'
+                    useBuiltIns: 'usage',
+                    corejs: '3.27.2'
                   }],
                   [
                     // enable transpiling ts => js
