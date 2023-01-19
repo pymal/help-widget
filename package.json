@@ -1,7 +1,7 @@
 {
   "name": "help-widget",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build":         "webpack --config webpack.config.js",
     "build-release": "webpack --config webpack.config.js --env.prod --display-modules",
     "start": "webpack-dev-server --open",
     "lint": "tslint --project tsconfig.json",
@@ -30,9 +30,9 @@
     "ts-jest": "^25.5.1",
     "tslint": "^5.20.1",
     "typescript": "^3.9.10",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.3"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "axios": "^1.2.2",
