@@ -2,7 +2,7 @@
   "name": "help-widget",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "build-release": "webpack --config webpack.config.js --env.prod --display-modules",
+    "build-release": "webpack --config webpack.config.js --env prod --stats-modules",
     "start": "webpack-dev-server",
     "lint": "tslint --project tsconfig.json",
     "test": "jest"

@@ -7,6 +7,9 @@ const openBrowser = require('react-dev-utils/openBrowser');
 module.exports = (env) => {
   const isDevBuild = !(env && env.prod);
 
+  console.log('env=', env);
+  console.log('isDevBuild=', isDevBuild);
+
   return [{
     entry: './src/index.ts',
     output: {
@@ -87,7 +90,7 @@ module.exports = (env) => {
                     },
                     // makes usage of @babel/polyfill because of IE11
                     // there is at least async functions and for..of
-                    useBuiltIns: 'usage',
+                    useBuiltIns: 'entry',
                     corejs: '3.27.2'
                   }],
                   [

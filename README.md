@@ -60,4 +60,3 @@ yarn upgrade-interactive --latest
 
 ## DEV-Server
 I removed `--open` from `"start": "webpack-dev-server" --open` and added `devServer:onListening` instead to just open the page one time
-Reload the Page automatically with `nodemon`
