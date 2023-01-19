@@ -28,7 +28,7 @@
 
     <p>
         There is also an additional snippet on the right top corner, that demonstrates ability to embed multiple widgets
-        with different configurations and keep their instances separate:
+        with different configurations (aw1 = another widget one) and keep their instances separate:
     </p>
     <code>
         <pre>
@@ -41,7 +41,7 @@
     aw1('init', { minimized: true, disableDarkMode: true });
 &lt;/script&gt;
 &lt;style&gt;
-    #widget-aw1 .main-root-3PoTs {
+    #widget-aw1 > div {
         right: auto;
         left: 10px
     }
@@ -117,7 +117,7 @@
         aw1('init', { minimized: true, disableDarkMode: true });
     </script>
     <style>
-        #widget-aw1 .main-root-hX4vn {
+        #widget-aw1 > div {
             top: 10px;
             bottom: auto
         }
